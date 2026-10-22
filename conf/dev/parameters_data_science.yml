@@ -1,0 +1,7 @@
+model_options:
+  test_size: 0.3
+  random_state: 42
+  features:
+    - passenger_capacity
+    - company_rating
+    - review_score

@@ -1,0 +1,41 @@
+companies:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/companies.csv
+
+shuttles:
+  type: pandas.ExcelDataset
+  filepath: data/01_raw/shuttles.xlsx
+  load_args:
+    engine: openpyxl
+
+reviews:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/reviews.csv
+
+preprocessed_companies:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/preprocessed_companies.parquet
+
+preprocessed_shuttles:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/preprocessed_shuttles.parquet
+
+model_input_table:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/model_input_table.parquet
+
+
+regressor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor.pkl
+
+metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/metrics.json
+
+predictions:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/predictions.csv
+  save_args:
+    index: false
+
